@@ -1,0 +1,24 @@
+Components
+==========
+
+    - Simple TypeScript class or TypeScript function behaves like Component.
+
+    - React Applications are Component Based Applications.
+
+    - we can provide communication between one component to another component.
+
+    - These components are Reusable Components.
+
+    - Class Level Components are also called as Stateful Components.
+
+    - Functional Level Components are also called as StateLess Components.
+
+*****************************************
+first-app
+        src
+          First.tsx
+
+          index.tsx
+        public
+            index.html
+*****************************************
