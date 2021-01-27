@@ -22,3 +22,34 @@ first-app
         public
             index.html
 *****************************************
+
+                        ***** Multiple Components *****
+
+
+ as a react developer, we can create more than one component
+
+
+ **********************************************************************
+ multiple-components
+                   src
+                     Header.tsx
+
+                     Body.tsx
+
+                     Footer.tsx
+
+                     Main.tsx
+
+                     index.tsx
+**************************************************************************
+
+
+
+
+
+
+
+
+
+
+
