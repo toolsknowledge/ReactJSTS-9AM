@@ -43,8 +43,22 @@ first-app
                      index.tsx
 **************************************************************************
 
+                                          ****** Props ******
+
+      - child "component" with receive the data from "parent" component by using props.
+
+      - props is the predefined object
 
 
+******************************************************************************
+props-ex
+       src
+         Parent.tsx
+
+         Child.tsx
+
+         index.tsx
+******************************************************************************
 
 
 
