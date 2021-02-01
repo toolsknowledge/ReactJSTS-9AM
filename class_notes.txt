@@ -65,5 +65,114 @@ props-ex
 
 
 
+                            ***** Single Page Applications ******
+
+Ex2.
+  step 1.
+      create the react project
+          > npx create-react-app spa-demo2 --template typescript
+
+  step 2.
+      switch to react application
+         > cd spa-demo2
+
+  step 3.
+      download the libraries.
+
+      => react-router-dom
+
+      => @types/react-router-dom
+
+      => @material-ui/core
+
+      => @material-ui/icons
+
+      > yarn add react-router-dom @types/react-router-dom @material-ui/core @material-ui/icons --save
+
+  step 4.
+    implement the Dashboard
+
+    *****************************************************
+    spa-demo2
+            src
+              Laptops.tsx
+
+              Mobiles.tsx
+
+              Jeans.tsx
+
+              Dashboard.tsx
+    *****************************************************
+
+
+
+
+  step 5.
+    create the Login Component.
+
+
+  **********************************************************
+  spa-demo2
+          src
+            Login.tsx
+  *********************************************************
+
+
+Step 6.
+  create the Main Component
+
+
+  ********************************************************
+  spa-demo2
+         src
+          Main.tsx
+  ********************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
