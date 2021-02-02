@@ -133,6 +133,57 @@ Step 6.
 
 
 
+                                      ***** Rest API Calls *****
+
+      => axios is the module, used to make the rest api calls.
+
+Step 1.
+    create the react application
+
+        > npx create-react-app rest-ex --template typescript
+
+        - where "rest-ex" is the name of the react application.
+
+
+Step 2.
+  switch to project
+
+    > cd rest-ex
+
+Step 3.
+  download axios module
+
+    > yarn add axios --save
+
+
+Step 4.
+  create the modal object based on rest api call
+
+        => https://restcountries.eu/rest/v2/all
+
+  ****************************************************
+  rest-ex
+        src
+          modal
+            Countries.ts
+  ****************************************************
+
+        - finally modal is ready with "Country" name
+
+
+
+Step 5.
+  create the Component.
+
+
+******************************************************
+rest-ex
+       src
+          components
+               GetEx.tsx
+******************************************************
+
+
 
 
 
