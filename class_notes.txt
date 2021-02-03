@@ -188,6 +188,19 @@ rest-ex
 
 
 
+                                          ***** POST Ex ******
+
+
+    URL : http://test-routes.herokuapp.com/test/uppercase    (POST)
+
+
+
+
+
+
+
+
+
 
 
 
