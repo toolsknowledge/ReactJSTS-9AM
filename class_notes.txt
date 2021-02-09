@@ -203,6 +203,51 @@ rest-ex
 
 
 
+                                        **** Forms ****
+
+
+
+1) create the react application
+
+    > npx create-react-app forms-app-ex --template typescript
+
+
+2) switch to react application
+
+    > cd forms-app-ex
+
+3) add material ui
+
+  > yarn add @material-ui/core @material-ui/icons --save
+
+
+
+*******************************
+forms-app
+       src
+         controls
+            Input.tsx
+                - Finally reusable Input component ready  
+                    props
+                    =====
+                      @name
+                      @label
+                      @value
+                      @onChange
+                      @error
+
+              Controls.tsx
+                - Contain Input component Entry
+
+              UseForm.tsx   (Functional Level)
+                  - Maintain the Reusable Code
+
+              Form.tsx    (To Apply the CSS)
+
+          Registration.tsx
+********************************
+
+
 
 
 
