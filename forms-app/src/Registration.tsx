@@ -15,19 +15,37 @@ const useStyles = makeStyles(theme=>({
 }))
 
 export default function Registration(props:any):any{
-    
+
+    const items:any[] = [
+        {id:"Male",title:"Male"},
+        {id:"Female",title:"Female"}
+    ];
+
+    const options:any[] = [
+        {id:"Engg",title:"Soft Engg"},
+        {id:"Sr.Engg",title:"Sr.Soft Engg"},
+        {id:"Architect",title:"Architect"},
+        {id:"Manager",title:"Manager"},
+        {id:"Tester",title:"Tester"}
+    ];
+
     const classes = useStyles();
 
     const initialFormValues = {
         firstName:"",
         lastName:"",
         email:"",
-        mobile:""
+        mobile:"",
+        gender:"Male",
+        departMentId:""
     };    
     const validate = (obj = values)=>{
         const temp = {...errors};
         if("firstName" in obj){
             temp.firstName = obj.firstName?"":"Can't Left First Name"
+        }
+        if("departMentId" in obj){
+            temp.departMentId = obj.departMentId.length>0?"":"Select Department !!!"
         }
         if("lastName" in obj){
             temp.lastName = obj.lastName?"":"Can't Left LastName"
@@ -52,6 +70,12 @@ export default function Registration(props:any):any{
         resetForm      
     } = UseForm(initialFormValues,true,validate);
 
+    const submitFn = (event:any)=>{
+        event.preventDefault();
+        console.log(values);
+    };
+
+
     return(
         <React.Fragment>
             <Paper elevation={3} className={classes.root}>
@@ -68,6 +92,18 @@ export default function Registration(props:any):any{
                                             label="Email"
                                             onChange={handleInputChange}
                                             error={errors.email}/>
+                             <Controls.RadioGroup 
+                                            name="gender"
+                                            value={values.gender}
+                                            onChange={handleInputChange}
+                                            label="Gender"
+                                            items={items}/>
+                            <Controls.Select name="departMentId"
+                                             value={values.departMentId}
+                                             label="Department"
+                                             error={values.error}
+                                             options={options}
+                                             onChange={handleInputChange}></Controls.Select>
                         </Grid>
                         <Grid item xs={6}>
                         <Controls.Input name="lastName"
@@ -80,6 +116,15 @@ export default function Registration(props:any):any{
                                         label="Mobile"
                                         onChange={handleInputChange}
                                         error={errors.mobile}/>
+                        <div>
+                            <Controls.Button type="submit"
+                                            text="Register" 
+                                            onClick={submitFn}></Controls.Button>
+                            <Controls.Button type="reset"
+                                            text="Reset"
+                                            onClick={resetForm}></Controls.Button>
+                        </div>
+                        
                         </Grid>
                     </Grid>
                 </Form>
