@@ -301,6 +301,134 @@ __test__
   > npm test
 
 
+                                                  State Management
+                                                  ****************
+  - we will implement state Management Applications by using following libraries.
+
+        @redux
+
+        @thunk
+
+        @saga
+
+  - To implement Redux Architecture, we have redux library.
+
+  - to moniter actions, we have thunk library.
+
+  - to manipulate original actions we have "saga" library.
+
+store
+=====
+  - store is the main component of state Management.
+
+  - store contain, "initial state" and "reducer".
+
+
+initial state
+=============
+  - Application" default output" called as initial state
+
+
+reducer
+=======
+  - business logic called as reducer.
+
+
+state
+=====
+  - reducer output called as state.
+
+
+dispatch
+========
+  requesting to "store" from "client" called as dispatch.  
+
+  dispatch contain payload and action.
+
+
+action
+======
+  - client requirement like WITHDRAW,DEPOSIT,MINISTATEMENT,......called as action.
+
+
+payload
+=======
+  - input to reducer (values) called as payload.
+
+
+subscribe  (state)
+=========
+  - receiving response from store called as subscribe.
+
+
+                        ******** Redux Example ******
+
+1) create the directory
+
+    Ex.
+        Bank_Ex
+
+
+2) download the "redux" module
+
+    > yarn add redux --save
+
+
+3) develop the redux application
+
+    bank.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
