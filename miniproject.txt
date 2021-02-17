@@ -1,0 +1,128 @@
+************************************************************************
+Step 1.
+    upload images to cloud server   (AWS)
+
+    images
+    ======
+    1) https://ecommerce9am.s3.ap-south-1.amazonaws.com/p1.jpg
+    2) https://ecommerce9am.s3.ap-south-1.amazonaws.com/p2.jpg
+    3) https://ecommerce9am.s3.ap-south-1.amazonaws.com/p3.jpg
+    4) https://ecommerce9am.s3.ap-south-1.amazonaws.com/p4.jpg
+    5) https://ecommerce9am.s3.ap-south-1.amazonaws.com/p5.jpg
+    6) https://ecommerce9am.s3.ap-south-1.amazonaws.com/p6.jpg
+
+    logos
+    =====
+    https://ecommerce9am.s3.ap-south-1.amazonaws.com/logo1.jpg
+    https://ecommerce9am.s3.ap-south-1.amazonaws.com/logo2.jpg
+
+
+Step 2.
+    make the database as ready
+
+    Signup URL : https://account.mongodb.com/account/login
+
+
+    database name : ecommerce9am
+    collection name : products
+
+    user : admin
+    password : admin
+
+
+    Connection URL : mongodb+srv://admin:admin@miniprojectdb.nzphu.mongodb.net/ecommerce9am?retryWrites=true&w=majority
+
+
+
+Step 3.
+    develop rest api (GET) by using nodejs
+
+
+    => create the server directory
+
+            Ex.
+                ecommerce-project
+                               server
+
+    => switch to server directory
+
+
+    => download node modules
+
+            1) mongodb
+
+            2) express
+
+            3) cors
+
+            4) body-parser
+
+
+            - mongodb module, used to interact with the mongodb database.
+
+            - express module, used to develop the rest services.
+
+            - cors module, used to enable the ports communication.
+
+            - body-parser module, used to receives the data from client application
+            
+
+            > yarn add mongodb express cors body-parser --save
+
+    => develop GET Request
+
+            server.js
+
+
+    => start the server
+
+            > node server
+
+    => Test the Rest API By Using "Postman"
+
+            > http://localhost:8080/api/products
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
