@@ -1,0 +1,26 @@
+<script>
+    let obj = {
+        "students":[
+            {"roll_no":101,
+             "details":{
+                 "name":"name_1",
+                 "marks":42,
+                 "age":20
+             }},
+            {
+                "roll_no":102,
+             "details":{
+                 "name":"name_2",
+                 "marks":45,
+                 "age":21
+             }
+            }
+        ]
+    };
+    function getStudentsWithMarksMoreThan(marks){
+        return obj.students.filter((element,index)=>{
+            return element.details.marks>marks;
+        });
+    };
+    console.log( getStudentsWithMarksMoreThan(50) );
+</script>
