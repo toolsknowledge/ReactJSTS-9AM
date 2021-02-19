@@ -1,6 +1,6 @@
 ************************************************************************
 Step 1.
-    upload images to cloud server   (AWS)
+    upload images to cloud server   (AWS)  (S3)
 
     images
     ======
@@ -13,8 +13,8 @@ Step 1.
 
     logos
     =====
-    https://ecommerce9am.s3.ap-south-1.amazonaws.com/logo1.jpg
-    https://ecommerce9am.s3.ap-south-1.amazonaws.com/logo2.jpg
+    https://ecommerce9am.s3.ap-south-1.amazonaws.com/logo1.png
+    https://ecommerce9am.s3.ap-south-1.amazonaws.com/logo2.png
 
 
 Step 2.
@@ -81,6 +81,126 @@ Step 3.
     => Test the Rest API By Using "Postman"
 
             > http://localhost:8080/api/products
+
+
+step 4.
+        create the react application
+
+        > npx create-react-app front-end --template typescript
+
+Step 5.
+      switch to react application 
+
+        > cd front-end
+
+
+Step 6.
+        download the react modules
+
+        => redux    @types/redux
+
+
+        => react-redux    @types/react-redux
+
+
+        => redux-thunk    @types/redux-thunk
+
+        => axios
+
+
+
+        - we will maintain state manegement with the help of redux.
+
+        - we will integrate state management to react application with the help of react-redux
+
+        - we will moniter the actions by using redux-thunk
+
+        - we will make asynchrnous calls by using axios
+
+
+        > yarn add redux @types/redux react-redux @types/react-redux redux-thunk @types/redux-thunk axios --save
+
+
+
+Step 7.
+        implement the Redux Architecture
+
+        create the modal based on server response
+        =========================================
+        front-end
+                src
+                  modal
+                     Product.tsx
+
+
+        - in general, we will create Modal by using interfaces  
+
+        - finally "Product" modal object is ready.
+
+
+
+        create the Action Types
+        =======================  
+        front-end
+                src
+                  types  
+                     ProductActionTypes.tsx
+
+
+        finally 3 actions are ready.
+
+        1) ProductsLoading
+
+        2) ProductsSuccess
+
+        3) ProductsFail
+
+        => ProductsActionTypes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           
 
 
