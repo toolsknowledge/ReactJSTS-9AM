@@ -4,10 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//createStore function, used to create the store
+import { createStore,combineReducers, applyMiddleware } from "redux";
+//import Provider
+//Provider makes the store availability to Component
+import { Provider } from "react-redux";
+//import productsReducer
+import productsReducer from "./reducer/ProductsReducer";
+import thunk from 'redux-thunk';
+const rootReducer = combineReducers({
+  products : productsReducer
+});
+const store = createStore(rootReducer,applyMiddleware(thunk));
+
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

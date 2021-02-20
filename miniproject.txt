@@ -158,9 +158,24 @@ Step 7.
         => ProductsActionTypes
 
 
+        implement the actions
+        =====================
+        front-end   
+                src
+                  actions
+                     ProductsAction.tsx
 
 
+        implement the reducer
+        =====================
+        front-end
+                src
+                  reducer
+                     ProductsReducer.tsx
 
+        implement the store
+        ===================
+        index.tsx
 
 
 
