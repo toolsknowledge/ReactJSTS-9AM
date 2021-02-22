@@ -11,9 +11,14 @@ import { createStore,combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 //import productsReducer
 import productsReducer from "./reducer/ProductsReducer";
+import detailsReducer from "./reducer/DetailsReducer";
+
+
+
 import thunk from 'redux-thunk';
 const rootReducer = combineReducers({
-  products : productsReducer
+  products : productsReducer,
+  details : detailsReducer
 });
 const store = createStore(rootReducer,applyMiddleware(thunk));
 

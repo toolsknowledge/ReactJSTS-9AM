@@ -47,6 +47,30 @@ app.get("/api/products",(req,res)=>{
 });
 
 
+//create the get request based on id
+app.get("/api/products/:id",(req,res)=>{
+    ashokIT.connect("mongodb+srv://admin:admin@miniprojectdb.nzphu.mongodb.net/ecommerce9am?retryWrites=true&w=majority",(err,connection)=>{
+        if(err) throw err;
+        else{
+            let db = connection.db("ecommerce9am");
+            db.collection("products").find({"_id":new mongodb.ObjectID(req.params.id)}).toArray((err,array)=>{
+                if(err){
+                    res.send({"message":"invalid product"});
+                }
+                else{
+                    if(array.length>0){
+                        res.send(array[0]);
+                    }else{
+                        res.send({"message":"no product found"});
+                    }
+                }
+            });
+        }
+    });
+});
+
+
+
 //assign the port no
 let port = process.env.PORT || 8080; 
 app.listen(port,()=>{
