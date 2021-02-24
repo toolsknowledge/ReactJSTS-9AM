@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+interface IProps{}
+interface IState{}
+class App extends React.Component<IProps,IState>{
+    constructor(props:IProps){
+        super(props);
+    };
+    render(){
+      return(
+         <React.Fragment>
+            <div className="grid-container">
+               
+               <header className="row">
+                  <div>
+                     <a href="#" className="brand">AshokIT</a>
+                  </div>
+                  <div>
+                     <a href="#">cart</a>
+                     <a href="#">signin</a>
+                  </div>
+               </header>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+               <main>
+                 content soon.....!
+               </main>
+               
+               <footer className="row center">
+                  copyright@ashokit.in
+               </footer>
+            </div>
+         </React.Fragment>
+      )
+    };
+};
 export default App;

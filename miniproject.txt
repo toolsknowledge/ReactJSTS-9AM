@@ -177,6 +177,69 @@ Step 7.
         ===================
         index.tsx
 
+DetailsScreen
+=============
+Step 1.
+        implement the server
+
+Step 2.
+        make the modal ready
+
+                - Already "Product" modal ready.
+
+Step 3.
+        create the Types
+
+        ************************************************
+        front-end
+                 src
+                   types
+                       DetailsActionTypes.tsx
+        ************************************************
+
+
+Step 4.
+        implement the actions
+
+
+        ***************************************************************
+        front-end
+                src
+                  actions
+                        DetailsActions.tsx
+        ***************************************************************
+
+
+Step 5.
+        implement the reducer
+
+        ***************************************************************
+        front-end
+                src
+                  reducer
+                        DetailsReducer.tsx
+        **************************************************************
+
+
+Step 6.
+        create the store
+
+
+24-02-2021
+==========
+Design the Master Screen
+
+App.tsx
+
+
+
+
+
+
+
+
+
+
 
 
 
