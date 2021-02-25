@@ -233,6 +233,99 @@ App.tsx
 
 
 
+25-02-2021
+==========
+        Develop the Utility Components
+
+
+1) LoadingBox
+
+       - if loading property  false show the "spinner", otherwise hide the spinner
+
+       - LoadingBox component is reusable component.
+
+       - we can call LoadingBox component utility component.
+
+
+********************************************
+front-end
+        src
+          components
+             LoadingBox.tsx
+*******************************************
+
+
+2) MessageBox
+
+        - if error present show the MessageBox Component as Error
+
+
+**********************************************
+front-end
+        src
+          components
+             MessageBox.tsx
+**********************************************
+
+
+
+3) Rating
+
+        - This component, used to display the "Rating Bar" by using font-awasome.
+
+        - This Component is the Reusable Component.
+
+        - This Component also called as Utility Component.
+
+        - This Component Receiving the two props.
+
+                        @rating
+
+                        @numReviews
+
+************************************************
+front-end
+        src
+          components
+             Rating.tsx
+***********************************************
+
+
+                - Finally we prepared 3 Utility Components.
+
+                                1) Rating   (props : rating ,  numReviews)
+
+                                2) MessageBox  (props :  variant   ("info"))
+
+                                3) LoadingBox  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

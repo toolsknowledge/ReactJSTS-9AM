@@ -73,3 +73,33 @@ a {
 a:hover {
   color: #ff8080;
 }
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: #2020a0;
+  background-color: #8989a0;
+}
+
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
+}
+
+.alert-success {
+  color: #20a0a0;
+  background-color: #eeffe0;
+}
+
+.rating span {
+  color: #ecb00a;
+  margin: 0.1rem;
+}
+
+.rating span:last-child {
+  color: #404040;
+}
