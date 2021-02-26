@@ -300,6 +300,32 @@ front-end
                                 3) LoadingBox  
 
 
+26-02-2021
+==========
+
+        Develop "HomeScreen" Component.
+
+
+       "HomeScreen" subscribes the "Redux Architecture" and displays data in the form of a "Card"
+
+
+*****************************************************************************
+front-end
+        src
+          screens
+              HomeScreen.tsx    (display all products details with Card)
+
+          components
+                Products.tsx
+******************************************************************************
+
+
+
+
+
+
+
+
 
 
 

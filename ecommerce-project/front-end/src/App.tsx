@@ -1,4 +1,6 @@
 import React from "react";
+import HomeScreen from "./screens/HomeScreen";
+
 interface IProps{}
 interface IState{}
 class App extends React.Component<IProps,IState>{
@@ -21,7 +23,7 @@ class App extends React.Component<IProps,IState>{
                </header>
 
                <main>
-                 content soon.....!
+                  <HomeScreen />
                </main>
                
                <footer className="row center">
