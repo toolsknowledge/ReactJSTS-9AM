@@ -37,6 +37,10 @@ body {
   align-items: center;
 }
 
+.row.center {
+  justify-content: center;
+}
+
 a.brand {
   font-size: 3rem;
   font-weight: bold;
@@ -102,4 +106,33 @@ a:hover {
 
 .rating span:last-child {
   color: #404040;
+}
+
+.card {
+  border: 0.1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  margin: 1rem;
+  border-radius: 0.5rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body > * {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
 }
