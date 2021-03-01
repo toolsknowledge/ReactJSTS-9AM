@@ -320,6 +320,56 @@ front-end
 ******************************************************************************
 
 
+01-Mar-2021
+===========
+
+Single Page Application
+
+        => make the "App" component as Main Component
+
+        => we have following Components are ChildComponent
+
+                        @HomeScreen    (Default)
+
+                        @ProductScreen
+
+                        @CartScreen
+
+                        @SinginScreen
+
+                        @RegistrationScreen
+
+                        @PaymentScreen
+
+                            ----
+                            ----
+
+=> download the libraries.
+
+        @react-router-dom
+
+        @types/react-router-dom
+
+
+        > cd ecommerce-project
+
+        > cd front-end
+
+        > yarn add  react-router-dom   @types/react-router-dom --save
+
+
+=> implement the App Component with Single Page Application logic
+
+
+
+
+
+
+
+
+
+
+
 
 
 
