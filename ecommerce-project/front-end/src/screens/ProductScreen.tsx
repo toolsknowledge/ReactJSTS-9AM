@@ -16,6 +16,7 @@ interface IProps{
     get_product:any;
     productDetails:any;
     history:History<LocationState>;
+    
 }
 interface IState{
     qty:number;
@@ -40,10 +41,10 @@ class ProductScreen extends React.Component<IProps,IState>{
         })
     }
 
-    addToCart = ()=>{
+    addToCart = (id:any)=>{
         //move to the cart screen
-        console.log( "move to the cart screen with qty and productid" );
-        this.props.history.push("/cart")
+        console.log( "move to the cart screen with qty and productid", id );
+        this.props.history.push(`/cart/${id}?qty=${this.state.qty}`);
     };
 
     render(){
@@ -114,7 +115,7 @@ class ProductScreen extends React.Component<IProps,IState>{
                                                   </div>
                                               </li>
                                               <li>
-                                                <button onClick={this.addToCart} className="primary block">Add to Cart</button>
+                                                <button onClick={()=> { this.addToCart(product._id) }} className="primary block">Add to Cart</button>
                                               </li>
                                             </>
                                         )}

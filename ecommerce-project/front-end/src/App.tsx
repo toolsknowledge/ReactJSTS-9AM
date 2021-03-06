@@ -32,7 +32,7 @@ class App extends React.Component<IProps,IState>{
                   <main>
                       <Route path="/" component={HomeScreen} exact={true} strict></Route>
                       <Route path="/product/:id" component={ProductScreen} exact={true} strict></Route>
-                      <Route path="/cart" component={CartScreen} exact={true} strict></Route>
+                      <Route path="/cart/:id" component={CartScreen} exact={true} strict></Route>
                   </main>
                   
                   <footer className="row center">
