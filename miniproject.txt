@@ -408,6 +408,23 @@ front-end
 
                 2) qty
 
+step 4.
+        create the reducer
+
+***********************************
+front-end
+        src
+          reducer
+                CartReducer.tsx
+***********************************
+
+        finally "cartReducer" is ready.
+
+
+
+step 5.
+        deploy the reducer to store
+
 
 
 

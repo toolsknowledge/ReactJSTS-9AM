@@ -16,9 +16,11 @@ import detailsReducer from "./reducer/DetailsReducer";
 
 
 import thunk from 'redux-thunk';
+import cartReducer from './reducer/CartReducer';
 const rootReducer = combineReducers({
   products : productsReducer,
-  details : detailsReducer
+  details : detailsReducer,
+  cart : cartReducer
 });
 const store = createStore(rootReducer,applyMiddleware(thunk));
 
