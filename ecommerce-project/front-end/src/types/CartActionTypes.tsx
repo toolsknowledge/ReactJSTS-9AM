@@ -1,25 +1,14 @@
-import { Cart } from "../modal/Cart";
+import Cart from "../modal/Cart";
 
-export const CART_LOADING:string = "CART_LOADING";
-export const CART_SUCCESS:string = "CART_SUCCESS";
-export const CART_FAIL:string = "CART_FAIL";
+export const ADD_ITEM:string = "ADD_ITEM";
 
 interface CartAsync{
-    loading:boolean;
-    cartInItems : Cart;
-    error : string;
+    cartInItems:Cart;
 };
 
-interface CartLoading extends CartAsync{
-    type : typeof CART_LOADING;
+interface CartItemAdd extends CartAsync{
+    type : typeof ADD_ITEM;
 };
 
-interface CartSuccess extends CartAsync{
-    type : typeof CART_SUCCESS;
-};
+export type CartActionTypes = CartItemAdd;
 
-interface CartFail extends CartAsync{
-    type : typeof CART_FAIL;
-};
-
-export type CartActionTypes = CartLoading | CartSuccess |  CartFail;

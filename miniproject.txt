@@ -362,72 +362,86 @@ Single Page Application
 
 
 
-11-03-2021
+16-03-2021
 ==========
 
-CartScreen
+Cart Functionality
+==================
 
-step 1.
-        create the model
+=> CartScreen have the following data
 
-*************************************
-front-end
-        src
-          model
-            Cart.tsx
-*************************************
+        @_id
+        @qty
 
-        finally "Cart" model is ready.
+=> we must prepare Types
 
+=> we must prepare actions
 
-step 2.
-        prepare the CartActionTypes
+=> we must prepare reducer
 
-*****************************************
-front-end
-        src
-          types
-             CartActionTypes.tsx
-*****************************************
-        finally "CartActionTypes" is ready.
+=> we must configure store
+
+=> pass the badge value to cart icon
 
 
-step 3.
-        create the action
+1) create the modal
 
-*******************************************
-front-end
-        src
-          actions
-            CartActions.tsx
-*******************************************
+        *****************************************
+        front-end
+                src
+                  modal
+                    Cart.ts
+        *****************************************
 
-        finally "getCartItems" function is ready with two arguments
+        - based on response from Server, we must create modal.
 
-                1) _id
+                @name
 
-                2) qty
+                @price
 
-step 4.
-        create the reducer
+                @image
 
-***********************************
-front-end
-        src
-          reducer
-                CartReducer.tsx
-***********************************
+                @_id
 
-        finally "cartReducer" is ready.
+                @countInStock
+
+        - finally "Cart" modal is ready.
 
 
+2) create the Types
 
-step 5.
-        deploy the reducer to store
+        *********************************
+        front-end
+                src  
+                  types
+                    CartTypes.tsx
+        ********************************
 
+        finally "CartActionTypes" are ready.
 
+        CART_ITEM_ADD
 
+        CART_ITEM_ADD_SUCCESS
 
+        CART_ITEM_ADD_FAIL
+
+3) create the actions
+
+        *************************************
+        front-end
+                src
+                  actions
+                        CartActions.tsx
+        ************************************
+
+4) create the reducer
+
+        ************************************************
+        front-end
+                src
+                  reducer
+                        CartReducer.ts
+        ***********************************************
 
 
 

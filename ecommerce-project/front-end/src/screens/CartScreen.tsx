@@ -1,5 +1,5 @@
 import React from "react";
-import { match as Match } from "react-router-dom";
+import { match as Match, NavLink,BrowserRouter } from "react-router-dom";
 import { Location } from "history";
 import { connect } from "react-redux";
 import getCartItems from "../actions/CartActions";
@@ -18,7 +18,6 @@ interface IState{}
 class CartScreen extends React.Component<IProps,IState>{
     constructor(props:IProps){
         super(props);
-        console.log( this.props.location.search.split("=")[1] );
     };
 
     componentDidMount(){
@@ -29,9 +28,14 @@ class CartScreen extends React.Component<IProps,IState>{
     render(){
         const qty = this.props.location.search?Number(this.props.location.search.split("=")[1]):1;
         return(
+
             <React.Fragment>
-                <h1>Product ID : {this.props.match.params.id}.....qty : {qty} </h1>
-                {JSON.stringify(this.props.final_arr)}
+                
+                    <NavLink to="/" exact={true} strict>Back To Screen</NavLink>
+                
+                    <h1>Product ID : {this.props.match.params.id}.....qty : {qty} </h1>
+                    {JSON.stringify(this.props.final_arr)}
+               
             </React.Fragment>
         )
     }
@@ -45,7 +49,7 @@ const receive = (state:any)=>{
 
 const send = (dispatch:any)=>{
     return{
-        addToCartItems : (arg1:any,arg2:any)=>{ getCartItems(arg1,arg2) }
+        addToCartItems : (arg1:any,arg2:any)=>{ dispatch( getCartItems(arg1,arg2) ) }
     }
 }
 

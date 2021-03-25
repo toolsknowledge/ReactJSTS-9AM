@@ -21,7 +21,6 @@ class HomeScreen extends React.Component<IProps,IState>{
 
         render(){
             const {loading,products,error} = this.props.products;
-            console.log( this.props.products );
             return(
                 <React.Fragment>
                     

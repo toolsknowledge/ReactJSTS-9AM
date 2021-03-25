@@ -1,47 +1,30 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { CartActionTypes, CART_LOADING, CART_SUCCESS, CART_FAIL } from "../types/CartActionTypes";
-const getCartItems = (id:any,qty:number)=>{
-    return async (dispatch:Dispatch<CartActionTypes>)=>{
-        dispatch({
-            type:CART_LOADING,
-            cartInItems:{countInStock:0,
-                         image:"",
-                         price:0,
-                         product:"",
-                         qty:0,
-                         name:""},
-            error:"",
-            loading:false
-        });
+import { CartActionTypes, ADD_ITEM } from "../types/CartActionTypes";
+
+const cartItems = (id:any,qty:number)=>{
+    return async (dispatch:Dispatch<CartActionTypes>,getState : ()=> any)=>{
+        
         try{
-            const {data} = await axios.get(`http://localhost:8080/api/products/${id}`);
+            const res = await axios.get(`http://localhost:8080/api/products/${id}`);
+            const { data } = res;
             dispatch({
-                type:CART_SUCCESS,
-                cartInItems:{name:data.name,
-                             qty,
-                             product:data._id,
+                type:ADD_ITEM,
+                cartInItems:{_id:data._id,
+                             name:data.name,
                              price:data.price,
                              image:data.image,
-                             countInStock:data.countInStock},
-                error:"",
-                loading:true
+                             counnInStock:data.countInStock,
+                             qty}
             })
+            
+          
+            window.localStorage.setItem( "cartItems", JSON.stringify(getState().cart.cartInItems.length) );
+           
         }catch(err){
-            dispatch({
-                type:CART_FAIL,
-                cartInItems:{
-                        countInStock:0,
-                        image:"",
-                        price:0,
-                        product:"",
-                        qty:0,
-                        name:""},
-                error:err.message,
-                loading:true
-            })
-        };
+           console.log( err );
+        }
     };
 };
 
-export default getCartItems;
+export default cartItems;

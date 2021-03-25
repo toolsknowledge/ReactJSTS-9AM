@@ -1,17 +1,29 @@
 import React from "react";
 import { BrowserRouter as Router, NavLink, Route } from "react-router-dom";
-
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 
-interface IProps{}
-interface IState{}
+interface IProps{
+}
+interface IState{
+    count:number;
+}
 class App extends React.Component<IProps,IState>{
     constructor(props:IProps){
         super(props);
+        this.state = {
+            count : 0
+        };
     };
+
+     
+ 
+
+
     render(){
+      const count = Number( window.localStorage.getItem("cartItems") );
+     
       return(
          <React.Fragment>
             <Router>
@@ -23,7 +35,11 @@ class App extends React.Component<IProps,IState>{
                         <NavLink to="/" className="brand" exact={true} strict>AshokIT</NavLink>
                      </div>
                      <div>
-                        <NavLink to="/cart" exact={true} strict>cart</NavLink>
+                        <NavLink to="/cart" exact={true} strict>
+                           cart
+                           { count>0 && (<span className="badge">{count}</span>)}
+
+                        </NavLink>
                         <NavLink to="/signin" exact={true} strict>signin</NavLink>
                         <NavLink to="/product" exact={true} strict></NavLink>
                      </div>
@@ -44,4 +60,5 @@ class App extends React.Component<IProps,IState>{
       )
     };
 };
+
 export default App;

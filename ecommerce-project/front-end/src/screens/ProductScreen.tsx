@@ -43,7 +43,6 @@ class ProductScreen extends React.Component<IProps,IState>{
 
     addToCart = (id:any)=>{
         //move to the cart screen
-        console.log( "move to the cart screen with qty and productid", id );
         this.props.history.push(`/cart/${id}?qty=${this.state.qty}`);
     };
 

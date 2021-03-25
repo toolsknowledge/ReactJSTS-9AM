@@ -1,8 +1,8 @@
-export interface Cart{
+interface Cart{
     name : string;
-    image :string;
-    product:string;
-    countInStock:number;
-    qty:number;
-    price:number;
+    image : string;
+    _id:string;
+    counnInStock : number;
+    price : number;
 };
+export default Cart;
