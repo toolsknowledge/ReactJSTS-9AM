@@ -445,6 +445,18 @@ Cart Functionality
 
 
 
+=> finally "Cart" modal is ready.
+
+=> finally "CartActionTypes" is ready.
+
+=> finally "cartItems" also ready.
+
+=> finally "cartReducer" is ready.
+
+=> finally "cart" selector also ready.
+
+
+
 
 
 

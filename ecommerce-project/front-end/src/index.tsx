@@ -13,8 +13,6 @@ import { Provider } from "react-redux";
 import productsReducer from "./reducer/ProductsReducer";
 import detailsReducer from "./reducer/DetailsReducer";
 
-
-
 import thunk from 'redux-thunk';
 import cartReducer from './reducer/CartReducer';
 const rootReducer = combineReducers({

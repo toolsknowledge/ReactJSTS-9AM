@@ -3,27 +3,24 @@ import { BrowserRouter as Router, NavLink, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
+import { connect } from "react-redux";
 
 interface IProps{
+   count:number;
 }
+
 interface IState{
-    count:number;
+    
 }
+
 class App extends React.Component<IProps,IState>{
     constructor(props:IProps){
         super(props);
-        this.state = {
-            count : 0
-        };
+        
     };
-
-     
- 
-
-
     render(){
-      const count = Number( window.localStorage.getItem("cartItems") );
-     
+      //const count = Number( window.localStorage.getItem("cartItems") );
+      console.log( "Count",typeof this.props.count );
       return(
          <React.Fragment>
             <Router>
@@ -37,7 +34,7 @@ class App extends React.Component<IProps,IState>{
                      <div>
                         <NavLink to="/cart" exact={true} strict>
                            cart
-                           { count>0 && (<span className="badge">{count}</span>)}
+                           {this.props.count>0 ? (<span className="badge">{this.props.count}</span>) : 0 }
 
                         </NavLink>
                         <NavLink to="/signin" exact={true} strict>signin</NavLink>
@@ -61,4 +58,18 @@ class App extends React.Component<IProps,IState>{
     };
 };
 
-export default App;
+const receive = (state:any)=>{
+   return{
+      count : state.cart.finalArray.length
+   }
+}
+
+
+const send = (dispatch:any)=>{
+   return{
+      
+   }
+}
+
+export default connect(receive,send)(App);
+

@@ -1,30 +1,37 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { CartActionTypes, ADD_ITEM } from "../types/CartActionTypes";
+import { ADD_ITEM, CartActionTypes } from "../types/CartActionTypes";
 
 const cartItems = (id:any,qty:number)=>{
-    return async (dispatch:Dispatch<CartActionTypes>,getState : ()=> any)=>{
-        
+    return async (dispatch:Dispatch<CartActionTypes>, getState:()=>any)=>{
         try{
-            const res = await axios.get(`http://localhost:8080/api/products/${id}`);
-            const { data } = res;
+            const response = await axios.get(`http://localhost:8080/api/products/${id}`);
+            const { data } = response;
+            data["qty"] = qty;
             dispatch({
                 type:ADD_ITEM,
-                cartInItems:{_id:data._id,
-                             name:data.name,
-                             price:data.price,
-                             image:data.image,
-                             counnInStock:data.countInStock,
-                             qty}
+                selectedItem:data
             })
-            
-          
-            window.localStorage.setItem( "cartItems", JSON.stringify(getState().cart.cartInItems.length) );
-           
+            let arr = getState().cart.finalArray;
+            let str_arr = JSON.stringify(arr);
+            window.localStorage.setItem("cart",str_arr);
         }catch(err){
-           console.log( err );
+            dispatch({
+                type:ADD_ITEM,
+                selectedItem:{ 
+                    "_id":"",
+                    "name":"",
+                    "category":"",
+                    "image":"",
+                    "price":0,
+                    "brand":"",
+                    "rating":0,
+                    "numReviews":0,
+                    "description":"",
+                    "countInStock":0
+                }
+            })
         }
-    };
+    }
 };
-
 export default cartItems;
