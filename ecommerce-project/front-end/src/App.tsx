@@ -34,7 +34,7 @@ class App extends React.Component<IProps,IState>{
                      <div>
                         <NavLink to="/cart" exact={true} strict>
                            cart
-                           {this.props.count>0 ? (<span className="badge">{this.props.count}</span>) : 0 }
+                           {this.props.count>0 ? (<span className="badge">{this.props.count}</span>) : (<span className="badge">0</span>) }
 
                         </NavLink>
                         <NavLink to="/signin" exact={true} strict>signin</NavLink>
@@ -58,6 +58,8 @@ class App extends React.Component<IProps,IState>{
     };
 };
 
+
+//subscription
 const receive = (state:any)=>{
    return{
       count : state.cart.finalArray.length

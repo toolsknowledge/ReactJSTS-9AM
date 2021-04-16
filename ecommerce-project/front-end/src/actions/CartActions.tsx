@@ -1,6 +1,33 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { ADD_ITEM, CartActionTypes } from "../types/CartActionTypes";
+import { ADD_ITEM, CartActionTypes, REMOVE_ITEM } from "../types/CartActionTypes";
+
+export const removeItem = (id:any)=>{
+    return async (dispatch:Dispatch<CartActionTypes>, getState:()=>any )=>{
+        dispatch({
+            type:REMOVE_ITEM,
+            id:id,
+            selectedItem:{ 
+                "_id":"",
+                "name":"",
+                "category":"",
+                "image":"",
+                "price":0,
+                "brand":"",
+                "rating":0,
+                "numReviews":0,
+                "description":"",
+                "countInStock":0
+            }
+        });
+        let arr = getState().cart.finalArray;
+            let str_arr = JSON.stringify(arr);
+            window.localStorage.setItem("cart",str_arr);
+    }
+};
+
+
+
 
 const cartItems = (id:any,qty:number)=>{
     return async (dispatch:Dispatch<CartActionTypes>, getState:()=>any)=>{
@@ -10,13 +37,15 @@ const cartItems = (id:any,qty:number)=>{
             data["qty"] = qty;
             dispatch({
                 type:ADD_ITEM,
-                selectedItem:data
+                selectedItem:data,
+                id:""
             })
             let arr = getState().cart.finalArray;
             let str_arr = JSON.stringify(arr);
             window.localStorage.setItem("cart",str_arr);
         }catch(err){
             dispatch({
+                id:"",
                 type:ADD_ITEM,
                 selectedItem:{ 
                     "_id":"",
@@ -34,4 +63,12 @@ const cartItems = (id:any,qty:number)=>{
         }
     }
 };
+
+
+
 export default cartItems;
+
+
+
+
+

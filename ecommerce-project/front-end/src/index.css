@@ -35,6 +35,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0px;
 }
 
 .row.center {
@@ -226,3 +228,9 @@ button:hover {
   font-size: 1.4rem;
   margin-left: 0.2rem;
 };
+
+
+img.small{
+  min-width: 5rem;
+  width: 100%;
+}

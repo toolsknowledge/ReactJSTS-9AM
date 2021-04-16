@@ -1,5 +1,5 @@
 import Cart from "../modal/Cart";
-import { ADD_ITEM } from "../types/CartActionTypes";
+import { ADD_ITEM, REMOVE_ITEM } from "../types/CartActionTypes";
 interface CartState{
     finalArray:Cart[]
 }
@@ -22,6 +22,13 @@ const cartReducer = (state=initialState,action:any):CartState=>{
                     ...state,
                     finalArray: [...state.finalArray,item]
                 }
+            }
+            break;
+        case "REMOVE_ITEM":
+            const id = action.id;
+            return{
+                ...state,
+                finalArray : state.finalArray.filter((element)=>{ return element._id != id })
             }
         default:
             return state;
